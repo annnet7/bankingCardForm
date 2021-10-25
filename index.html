@@ -13,8 +13,24 @@
     <div class="wrapper">
         <div class="form-container">
             <!-- banking card field flipbox -->
-            <div class="bankingcard">
+            <div class="bankingcard flip-box">
+                <div class="flip-box-inner" id="flipBox">
+                    <div class="flip-box-front">
+                        <!-- card front side elements -->
+                        <div id="cardNumberText">xxxx xxxx xxxx xxxx</div>
+                        <div id="cardHolderName">xxxxxx xxxxxx</div>
+                        <div id="cardMonth">xx</div>
+                        <div id="cardDataSeparator"> / </div>
+                        <div id="cardYear">xxxx</div>
 
+                        <!-- card front side elements -->
+                    </div>
+                    <div class="flip-box-back">
+                        <!-- card back side elements -->
+                        <div id="cardCVV">xxx</div>
+                        <!-- card back side elements -->
+                    </div>
+                </div>
             </div>
 
             <!-- form to input bank details -->
@@ -24,7 +40,7 @@
                     pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" required />
 
                 <label> Card holder name</label>
-                <input type="text" name="cardName" id="cardName" placeholder="Hungry Shark" maxlength="19" required />
+                <input type="text" name="cardName" id="cardName" placeholder="xxxxxx xxxxxx" maxlength="19" required />
 
 
                 <div class="row">
@@ -32,12 +48,8 @@
                         <label>Card expiration date</label>
                         <div class="row">
                             <select name="monthNum" id="monthNum">
-                                <option value="" disabled selected>Month</option>
-                                <option value="01">01</option>
                             </select>
                             <select name="yearNum" id="yearNum">
-                                <option value="" disabled selected>Year</option>
-                                <option value="1990">1990</option>
                             </select>
                         </div>
                     </div>
@@ -55,6 +67,34 @@
         </div>
 
     </div>
+
+    <script>
+        //spawn data to select box
+        const MonthSelectField = document.getElementById('monthNum');
+        MonthSelectField.innerHTML = '<option value="" disabled selected>Month</option>';
+        for (let i = 1; i <= 12; i++) {
+            MonthSelectField.innerHTML += '<option value="' + i + '">' + i + '</option>';
+        }
+
+        const curDate = new Date().getFullYear();
+        const YearSelectField = document.getElementById('yearNum');
+        YearSelectField.innerHTML = '<option value="" disabled selected>Year</option>';
+        for (let i = curDate; i <= curDate + 10; i++) {
+            YearSelectField.innerHTML += '<option value="' + i + '">' + i + '</option>';
+        }
+        //<option value="1990">1990</option>
+
+        //make flip when CVV field on focus
+        const cvvField = document.getElementById('cvvNum');
+        const flipBox = document.getElementById('flipBox')
+        cvvField.addEventListener('focus', () => {
+            flipBox.style.transform = 'rotateY(180deg)';
+        })
+        cvvField.addEventListener('focusout', () => {
+            flipBox.style.transform = 'rotateY(0deg)';
+        })
+    </script>
+
 </body>
 
 </html>

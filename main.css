@@ -37,25 +37,124 @@ body {
 .bankingcard {
   width: 344px;
   height: 216px;
-  border-radius: 15px;
+  margin-top: -150px;
+  position: relative;
+}
 
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/* .flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+} */
+
+/* Position the front and back side */
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+
+  border-radius: 15px;
   box-sizing: border-box;
   padding: 10px;
-
-  background-color: #5a5266;
-
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  align-content: center;
-  justify-content: center;
-
-  margin-top: -150px;
-
-  -webkit-box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.9);
-  -moz-box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.9);
-  box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.9);
+  -webkit-box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.5);
+  -moz-box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.5);
+  box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.5);
 }
+
+/* Style the front side */
+.flip-box-front {
+  background-color: #5a5266;
+  color: #ffffff;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: #f483a4;
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+/*----------- Card elements  -----------------*/
+#cardNumberText {
+  position: absolute;
+  width: 90%;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: 1px solid #5cbec2; */
+  top: 100px;
+  left: 20px;
+  text-align: left;
+}
+#cardHolderName {
+  position: absolute;
+  width: 45%;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: 1px solid #5cbec2; */
+  top: 150px;
+  left: 20px;
+
+  text-align: left;
+  /* font-size: 14px; */
+}
+#cardMonth {
+  position: absolute;
+  width: 15%;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: 1px solid #5cbec2; */
+  top: 150px;
+  left: 55%;
+}
+#cardDataSeparator {
+  position: absolute;
+  width: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: 1px solid #5cbec2; */
+  top: 150px;
+  left: 70%;
+}
+#cardYear {
+  position: absolute;
+  width: 18%;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: 1px solid #5cbec2; */
+  top: 150px;
+  left: 77%;
+}
+
+#cardCVV {
+  position: absolute;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: #5a5266;
+  background-color: #fff;
+  top: 50px;
+  left: 0;
+  text-align: right;
+}
+/*----------- Card elements end -----------------*/
+
 /*------- Fast align -------*/
 
 .row {
