@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #c7dbd4;
+}
+.form-container {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  min-height: 200px;
+  box-sizing: border-box;
+  padding: 20px;
+
+  border-radius: 20px;
+  background-color: #f0e7e6;
+
+  -webkit-box-shadow: 0px 13px 54px 2px rgba(116, 169, 164, 1);
+  -moz-box-shadow: 0px 13px 54px 2px rgba(116, 169, 164, 1);
+  box-shadow: 0px 13px 54px 2px rgba(116, 169, 164, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.bankingcard {
+  width: 344px;
+  height: 216px;
+  border-radius: 15px;
+
+  box-sizing: border-box;
+  padding: 10px;
+
+  background-color: #5a5266;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center;
+  justify-content: center;
+
+  margin-top: -150px;
+
+  -webkit-box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.9);
+  -moz-box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.9);
+  box-shadow: 0px 3px 34px 0px rgba(90, 82, 102, 0.9);
+}
+/*------- Fast align -------*/
+
+.row {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.col {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+/*------- Fast align end-------*/
+
+/*-------- Form style ------*/
+
+.BankForm {
+  margin: 20px;
+
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center;
+  justify-content: center;
+}
+.BankForm label {
+  margin-top: 20px;
+  color: #5a5266;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+.BankForm input,
+select {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #c7dbd4;
+  border-radius: 3px;
+  color: #5a5266;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+.BankForm input:focus,
+select:focus {
+  outline: #5cbec2 solid 2px;
+}
+
+.BankForm select {
+  margin-right: 10px;
+}
+
+.BankForm input[type="button"] {
+  background-color: #f483a4;
+
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  margin-top: 30px;
+  padding: 15px;
+}
+.BankForm input[type="button"]:hover {
+  background-color: #d12660;
+}
+.BankForm input[type="button"]:focus {
+  outline: none;
+}
