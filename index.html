@@ -48,9 +48,9 @@
                     <div class="col">
                         <label>Card expiration date</label>
                         <div class="row">
-                            <select name="monthNum" id="monthNum">
+                            <select name="monthNum" id="monthNum" required>
                             </select>
-                            <select name="yearNum" id="yearNum">
+                            <select name="yearNum" id="yearNum" required>
                             </select>
                         </div>
                     </div>
@@ -61,7 +61,8 @@
                     </div>
                 </div>
 
-                <input type="button" name="sendBankingForm" id="sendBankingForm" value="Make a payment">
+                <!-- <input type="button" name="sendBankingForm" id="sendBankingForm" value="Make a payment"> -->
+                <button id="sendBankingForm">Make a payment</button>
 
 
             </form>

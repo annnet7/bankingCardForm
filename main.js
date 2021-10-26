@@ -22,18 +22,15 @@ cvvField.addEventListener('focus', () => {
 cvvField.addEventListener('focusout', () => {
     flipBox.style.transform = 'rotateY(0deg)';
 })
-//no text for carNumber field 
-const cardNum = document.getElementById('cardNumber');
-cardNum.addEventListener('input', function () {
-    this.value = this.value.replace(/[^0-9]/, '');
-});
 
 //code to make spaces after 4 symbols
 const creditCardField = document.getElementById('cardNumber');
+const cardNumberText = document.getElementById('cardNumberText');
 
 function formatCreditCard() {
     let ccnum = creditCardField.value.replaceAll(/\s/g, '');
-    return creditCardField.value = ccnum ? ccnum.match(/.{1,4}/g).join(' ') : '';
+    creditCardField.value = ccnum ? ccnum.match(/.{1,4}/g).join(' ') : '';
+    return cardNumberText.innerText = creditCardField.value;
 }
 
 creditCardField.addEventListener('change', formatCreditCard);
