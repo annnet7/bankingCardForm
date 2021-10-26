@@ -144,14 +144,16 @@ body {
 
 #cardCVV {
   position: absolute;
-  width: 100%;
+  width: 99%;
   padding: 10px 20px;
   box-sizing: border-box;
   color: #5a5266;
   background-color: #fff;
   top: 50px;
-  left: 0;
+  left: 1px;
   text-align: right;
+  box-sizing: border-box;
+  border-radius: 0;
 }
 /*----------- Card elements end -----------------*/
 
@@ -233,4 +235,11 @@ select:focus {
 }
 .BankForm #sendBankingForm:focus {
   outline: none;
+}
+#cvvNum {
+  max-width: 30px;
+}
+.accentBorder {
+  outline: 2px solid #ffffff;
+  border-radius: 5px;
 }
